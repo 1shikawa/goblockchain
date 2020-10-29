@@ -1,5 +1,5 @@
 {
-	"name": "Go Sample",
+	"name": "goblockchain",
 	// dockerFile -> dockerComposeFile
 	"dockerComposeFile": [
 		"docker-compose.yml"
@@ -7,7 +7,7 @@
 	// docker-compose.servicesのどのコンテナで作業するのかを設定する
 	"service": "app",
 	// workspaceを設定する
-	"workspaceFolder": "/app/src",
+	"workspaceFolder": "/go/src/app",
 	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
 	// docker-compose.yml内で設定できるので不要
@@ -16,9 +16,12 @@
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"go.gopath": "/go",
+		// "go.goroot": "/usr/local/go",
+		"go.toolsGopath": "/go/bin",
 		"go.inferGopath": true,
-		"go.useLanguageServer": true
-	},
+		"go.useLanguageServer": true,
+		"go.useGoProxyToCheckForToolUpdates": false
+        }
 
 	"remoteUser": "vscode",
 

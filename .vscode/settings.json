@@ -1,4 +1,6 @@
 {
+    "files.autoSave": "afterDelay",
+
     "go.useLanguageServer": true,
     // true -> false
     "go.inferGopath": false,

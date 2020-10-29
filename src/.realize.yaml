@@ -1,11 +1,35 @@
 settings:
-  legacy:
-    force: false
-    interval: 0s
+  files:
+    outputs:
+      status: false
+      path: ""
+      name: .r.outputs.log
+    logs:
+      status: false
+      path: ""
+      name: .r.logs.log
+    errors:
+      status: false
+      path: ""
+      name: .r.errors.log
 schema:
-- name: src
-  path: .
+- name: goblockchain
+  path: /go/src/
   commands:
+    clean:
+      status: true
+    vet:
+      status: true
+    fmt:
+      status: true
+    test:
+      status: true
+    generate:
+      status: true
+    install:
+      status: true
+    build:
+      status: true
     run:
       status: true
   watcher:

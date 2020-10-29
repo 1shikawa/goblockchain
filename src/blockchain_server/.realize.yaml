@@ -1,0 +1,57 @@
+settings:
+  files:
+    outputs:
+      status: false
+      path: ""
+      name: .r.outputs.log
+    logs:
+      status: false
+      path: ""
+      name: .r.logs.log
+    errors:
+      status: false
+      path: ""
+      name: .r.errors.log
+  legacy:
+    force: false
+    interval: 100ms
+server:
+  status: false
+  open: false
+  port: 5000
+  host: localhost
+schema:
+- name: goblockchain_server
+  path: /go/src/app/blockchain_server
+  commands:
+    clean:
+      status: true
+    vet:
+      status: true
+    fmt:
+      status: true
+    test:
+      status: true
+    generate:
+      status: true
+    install:
+      status: true
+    build:
+      status: true
+    run:
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    # scripts:
+    # - command: echo "realize start"
+    #   type: before
+    #   output: true
+    # - command: echo "realize stop"
+    #   type: after
+    ignored_paths:
+    - .git
+    # - .realize
+    - vendor

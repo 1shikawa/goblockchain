@@ -54,10 +54,13 @@ RUN apt-get update \
     #
     # Install gocode-gomod
     && go get -x -d github.com/stamblerre/gocode 2>&1 \
-    && go get -v github.com/oxequa/realize \
     && go build -o gocode-gomod github.com/stamblerre/gocode \
     && mv gocode-gomod $GOPATH/bin/ \
     #
+    #goblockchain module
+    && go get -v github.com/oxequa/realize \
+    # && go get -v golang.org/x/crypto/ripemd160 \
+    # && go get -v github.com/btcsuite/btcutil/base58 \
     # Install golangci-lint
     && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin 2>&1 \
     #
